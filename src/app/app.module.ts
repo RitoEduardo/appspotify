@@ -11,13 +11,15 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ROUTES } from './app.routes';
+import { NoimagePipe } from './pipes/noimage.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,

@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
       console.log(data);
       this.artists = data;
     })
-
   }
 
 }

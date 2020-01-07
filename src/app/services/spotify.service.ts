@@ -14,36 +14,33 @@ ClientSecret: acee1166d0d743868e753e7a524b9e0f
 
 export class SpotifyService {
 
-  private token = "BQANLmLHVanoe8mxv0mDRFmI1JyVqbplVAtMQQ28otS1D-FiOF2s-bzmsAKYhSntt8A9hYXUC6lXutZxLE8";
+  private url = "https://api.spotify.com/v1/";
+  private token = "BQAWF19FZ2rlcXeQY3iJlhN5yTZw9H_3CK0N-B2DmmYAlcP2JSVRiwWEGPkpFh9Ef2OXMLi075yxi9jVxWA";
 
   constructor( private http:HttpClient) {
     console.log("Spotify service load");
   }
 
-  getNewReleases(){
-
-    const headers = new HttpHeaders({
+  get headAuth() : HttpHeaders{
+    return new HttpHeaders({
       'Authorization': 'Bearer '+this.token
     })
+  }
 
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases',{headers})
-      .pipe( map( data =>{
-          return data['albums']['items'];
-      }));
-
+  getQuery( q: string ){
+    return this.http.get(this.url + q,{
+      headers:this.headAuth
+    });
+  }
+ 
+  getNewReleases(){
+    return this.getQuery('browse/new-releases')
+               .pipe( map( data => data['albums']['items'] ));
   }
 
   getSearch( q :string ){
-
-    const headers = new HttpHeaders({
-      'Authorization': 'Bearer '+this.token
-    })
-
-    return this.http.get(`https://api.spotify.com/v1/search?q=${ q }&type=artist&limit=15`,{headers})
-                    .pipe( map( data =>{
-                      return data['artists']['items'];
-                    }));
-
+    return this.getQuery(`search?q=${ q }&type=artist&limit=15`)
+               .pipe( map( data => data['artists']['items'] ));
   }
 
 }
