@@ -9,10 +9,12 @@ import { SpotifyService } from '../../services/spotify.service';
 export class HomeComponent implements OnInit {
 
   newRealeases: any[] = [];
+  loading:Boolean = true;
 
   constructor( private spotifyService: SpotifyService ) { 
     this.spotifyService.getNewReleases().subscribe( (data:any) =>{
       this.newRealeases = data;
+      this.loading = false;
       console.log( this.newRealeases );
     })
   }

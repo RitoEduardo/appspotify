@@ -3,8 +3,8 @@
         <input type="text" #inpSearch (keyup)="search(inpSearch.value)" class="form-control" placeholder="Search Artist">
     </div>
 </div>
-
-<div class="card-columns m-5">
+<app-cards [items]="artists"></app-cards>
+<!--div class="card-columns m-5">
     <div *ngFor='let release of artists' class="card">
         <img [src]="release.images | noimage " class="card-img-top" alt="...">
         <div class="card-body">
@@ -12,4 +12,4 @@
             <span *ngFor='let artist of release.artists' class="badge badge-primary">{{ artist.name }}</span>
         </div>
     </div>
-</div>
+</div-->

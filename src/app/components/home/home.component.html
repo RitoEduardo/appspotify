@@ -1,11 +1,2 @@
-<p>home works!</p>
-
-<div class="card-columns">
-    <div *ngFor='let release of newRealeases' class="card">
-        <img [src]="release.images | noimage " class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"> {{ release.name }}</h5>
-            <span *ngFor='let artist of release.artists' class="badge badge-primary">{{ artist.name }}</span>
-        </div>
-    </div>
-</div>
+<app-loading *ngIf="loading"></app-loading>
+<app-cards [items]="newRealeases"></app-cards>

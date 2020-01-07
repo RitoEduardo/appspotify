@@ -15,7 +15,7 @@ ClientSecret: acee1166d0d743868e753e7a524b9e0f
 export class SpotifyService {
 
   private url = "https://api.spotify.com/v1/";
-  private token = "BQAWF19FZ2rlcXeQY3iJlhN5yTZw9H_3CK0N-B2DmmYAlcP2JSVRiwWEGPkpFh9Ef2OXMLi075yxi9jVxWA";
+  private token = "BQCWQai5GL09sTlR-OSFODDJhq1saiODrfdZv3Z8cuM1GUuWuDrLjr7abT8pvLL_BBj0-SFS0DVSQDs20HM";
 
   constructor( private http:HttpClient) {
     console.log("Spotify service load");
