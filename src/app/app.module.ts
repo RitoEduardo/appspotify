@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 @NgModule({
@@ -22,6 +23,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     ArtistComponent,
     NavbarComponent,
     NoimagePipe,
+    DomseguroPipe,
     CardsComponent,
     LoadingComponent
   ],
@@ -29,7 +31,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot( ROUTES , { useHash: true }),    
+    RouterModule.forRoot( ROUTES , { useHash: true }),
   ],
   providers: [],
   bootstrap: [AppComponent]
